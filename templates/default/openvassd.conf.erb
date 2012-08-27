@@ -106,7 +106,7 @@ kb_max_age = 864000
 slice_network_addresses = no
 
 # Should consider all the NASL scripts as being signed ? (unsafe if set to 'yes')
-nasl_no_signature_check = <%= node['openvas']['nasl_no_signature_check'] %>
+nasl_no_signature_check = <%= @nasl_no_signature_check %>
 
 # Certificates
 #

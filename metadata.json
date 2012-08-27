@@ -8,7 +8,8 @@
   "platforms": {
   },
   "dependencies": {
-    "apt": ">= 0.0.0"
+    "apt": ">= 0.0.0",
+    "perl": ">= 0.0.0"
   },
   "recommendations": {
   },
