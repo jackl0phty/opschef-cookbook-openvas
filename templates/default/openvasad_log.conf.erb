@@ -1,0 +1,31 @@
+# OpenVAS Administrator logging configuration
+#
+# WARNING: Setting the level of any group (besides event*) to include debug
+#          may reveal passwords in the logs.
+#
+# This file was dropped off by OpsCode Chef.
+# Local changes will be overwritten.
+
+[ad   main]
+prepend=%t %p
+prepend_time_format=%Y-%m-%d %Hh%M.%S %Z
+file=/var/log/openvas/openvasad.log
+level=127
+
+[ad   comm]
+prepend=%t %p
+prepend_time_format=%Y-%m-%d %Hh%M.%S %Z
+file=/var/log/openvas/openvasad.log
+level=127
+
+[ad    oap]
+prepend=%t %p
+prepend_time_format=%Y-%m-%d %Hh%M.%S %Z
+file=/var/log/openvas/openvasad.log
+level=127
+
+[*]
+prepend=%t %p
+prepend_time_format=%Y-%m-%d %Hh%M.%S %Z
+file=/var/log/openvas/openvasad.log
+level=127

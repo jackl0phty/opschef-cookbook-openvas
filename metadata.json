@@ -1,0 +1,30 @@
+{
+  "name": "openvas",
+  "description": "Installs/Configures openvas",
+  "long_description": "\nDescription\n===========\n\nInstall and configure OpenVAS ( Open Vulenability Assessment System ); a fork of the [Nessus] (http://www.nessus.org/products/nessus) project.\n\nProject homepage can be found [here] (http://www.openvas.org/index.html) \n\nRequirements\n============\n\nIt's recommended to create a role and apply it to your node definition.\n\nHere's an exammple role to enable all things provided by this cookbook.\nThis is the recommended method. Note: Including recipe openvas::nmap before\nopenvas::server is required since it's a requirement.\n<pre><code>\nname \"openvas_server\"\ndescription \"Install & configure an OpenVAS server.\"\noverride_attributes \"openvas\" => { \"enable_nvt_updates_from_cron\" => \"yes\",\n                    \"gsad_port\" => \"9392\", \"enable_greenbone_scan_configs\" => \"yes\",\n                    \"nasl_no_signature_check\" => \"no\" }\nrun_list [\n  \"recipe[openvas::nmap]\",\n  \"recipe[openvas::server]\"\n]\n</pre></code>\n\nHere's an example role to install an OpenVAS server.\n<pre><code>\nname \"openvas_scanner\"\ndescription \"Install/Configure an OpenVAS Server\"\noverride_attributes \"openvas_scanner\" => { }\nrun_list [\n  \"recipe[openvas::nmap]\",\n  \"recipe[openvas::server]\"\n]  \noverride_attributes \"openvas_scanner\" => { }\n</pre></code>\n\nNow upload your role like so:\n<pre><code>\nknife role from file roles/openvas_scanner.json\n</pre></code>\n\nHere's an example role to install an OpenVAS Scanner and automatically enable NVT updates.\n<pre><code>\nname \"openvas_scanner\"\ndescription \"Install/Configure an OpenVAS Server\"\noverride_attributes \"openvas\" => { \"enable_nvt_updates_from_cron\" => \"yes\" }\nrun_list [\n  \"recipe[openvas::server]\",\n  \"recipe[openvas::nmap]\"\n</pre></code>\n\nDon't forget to apply your role to your node's definition\n<pre><code>\n{\n    \"normal\": {\n    },\n    \"name\": \"ovasscanner\",\n    \"override\": {\n    },\n        \"prod_web\": {\n    },\n    \"json_class\": \"Chef::Node\",\n    \"automatic\": {\n    },\n    \"run_list\": [\n                \"role[openvas_scanner]\"\n    ],\n    \"chef_type\": \"node\"\n}\n</pre></code>\n\nHere's an example role to install only an OpenVAS client.\n<pre><code>\nname \"openvas_client\"\ndescription \"Install/Configure an OpenVAS client\"\nrun_list \"recipe[openvas::client]\"\noverride_attributes \"openvas_scanner\" => { }\n</pre></code>\n\nNow upload your role like so:\n<pre><code>\nknife role from file roles/openvas_client.json\n</pre></code>\n\nNOTE ABOUT ADMIN/PASSWORD\n=========================\n\nThe default admin user name and password is written\nto /etc/openvas/openvas_admin_pass.txt.\n\nAttributes\n==========\n\nSet to \"yes\" to add entry to super user root's CRON tab. \n<pre><code>\ndefault['openvas']['enable_nvt_updates_from_cron'] = \"yes\"\n</pre></code>\n",
+  "maintainer": "Gerald L. Hevener Jr., M.S.",
+  "maintainer_email": "jackl0phty@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.0.46"
+}

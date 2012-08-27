@@ -1,0 +1,25 @@
+# GSA logging configuration
+#
+# WARNING: Setting the level of any of the library groups or the "*"
+#          group to include debug may reveal passwords in the logs.
+#
+# This file was dropped off by OpsCode Chef.
+# Loca changes will be overwritten!
+
+[gsad main]
+prepend=%t %p
+prepend_time_format=%Y-%m-%d %Hh%M.%S %Z
+file=/var/log/openvas/gsad.log
+level=128
+
+[gsad  omp]
+prepend=%t %p
+prepend_time_format=%Y-%m-%d %Hh%M.%S %Z
+file=/var/log/openvas/gsad.log
+level=128
+
+[*]
+prepend=%t %p
+prepend_time_format=%Y-%m-%d %Hh%M.%S %Z
+file=/var/log/openvas/gsad.log
+level=0
