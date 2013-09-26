@@ -84,7 +84,7 @@ override_attributes "openvas_scanner" => { }
 
 Now upload your role like so:
 <pre><code>
-knife role from file roles/openvas_client.json
+knife role from file roles/openvas_client.rb
 </pre></code>
 
 NOTE ABOUT ADMIN/PASSWORD
