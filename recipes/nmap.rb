@@ -17,7 +17,7 @@ case node['platform']
     end
 
     # INstall Nmap version 6 on x86
-    if node['target_cpu'] = "x86" 
+    if node['target_cpu'] == "x86" 
     
       execute "install-nmap-version-6-x86" do
         command "rpm -Uvh http://nmap.org/dist/nmap-6.00-1.i386.rpm"
@@ -28,7 +28,7 @@ case node['platform']
     end  
 
     # INstall Nmap version 6 on x86_64
-    if node['target_cpu'] = "x86_64"
+    if node['target_cpu'] == "x86_64"
     
       execute "install-nmap-version-6-x86_64" do
         command "rpm -Uvh http://nmap.org/dist/nmap-6.00-1.x86_64.rpm"
