@@ -1,3 +1,8 @@
+Changes for OpenVAS cookbook version 0.0.53
+===========================================
+* Add source.rb. Installs latest vis source.
+* Add initial test-kitchen support.
+
 Changes for OpenVAS cookbook version 0.0.52
 ===========================================
 * Added Travis-ci integration.

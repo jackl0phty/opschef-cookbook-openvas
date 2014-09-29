@@ -3,7 +3,7 @@ maintainer_email "jackl0phty@gmail.com"
 license          "Apache 2.0"
 description      "Installs/Configures openvas"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.0.52"
+version          "0.0.53"
 recipe           "openvas", "Default recipe. Does nothing by default."
 recipe           "openvas::client", "Installs repo & the OpenVAS client."
 recipe           "openvas::repo", "Installs the OpenVAS YUM repo."

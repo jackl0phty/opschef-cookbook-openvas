@@ -16,22 +16,54 @@
 # limitations under the License.
 
 # Set yes to append CRON job to crontab to update NVTs
-set['openvas']['enable_nvt_updates_from_cron'] = "no"
+node.default['openvas']['enable_nvt_updates_from_cron'] = 'no'
 
-# Set Perl location. Not used if ['openvas']['enable_nvt_updates_from_cron'] = "no"
-set['openvas']['which_perl'] = "/usr/bin/perl"
+# Set Perl location. Not used if ['openvas']['enable_nvt_updates_from_cron'] = 'no'
+node.default['openvas']['which_perl'] = "/usr/bin/perl"
 
 # Set TCP port for the gsad service
-set['openvas']['gsad_port'] = "9392"
+node.default['openvas']['gsad_port'] = '9392'
 
 # Set to yes to enable Greenbone scan configs
-set['openvas']['enable_greenbone_scan_configs'] = "no"
+node.default['openvas']['enable_greenbone_scan_configs'] = 'no'
 
 # Set to no to enable NVT signature check.
-set['openvas']['nasl_no_signature_check'] = "yes"
+node.default['openvas']['nasl_no_signature_check'] = 'yes'
 
 # Target to create ( e.g. Server you want to scan )
-set['openvas']['target_to_create'] = "scanme.example.tld"
+node.default['openvas']['target_to_create'] = 'scanme.example.tld'
 
 # Random pass is generated in server.rb
-set['openvas']['openvas_admin_pass'] = ""
+node.default['openvas']['openvas_admin_pass'] = ''
+
+# Vesion of libraries to install.
+node.default['openvas'['libraries_version'] = '7.0.4'
+
+# Vesion of scanner to install.
+node.default['openvas'['scanner_version'] = '4.0.3'
+
+# Vesion of manager to install.
+node.default['openvas'['manager_version'] = '5.0.4'
+
+# Vesion of GSA ( Greenbone Security Assistant ) to install.
+node.default['openvas'['gsa_version'] = '5.0.3'
+
+# Vesion of CLI ( Command Line Interface ) to install.
+node.default['openvas'['cli_version'] = '1.3.0'
+
+# Libraries download URL.
+node.default['openvas']['libraries_url'] = 'http://wald.intevation.org/frs/download.php/1722/openvas-libraries-7.0.4.tar.gz'
+
+# Scanner download URL.
+node.default['openvas']['scanner_url'] = 'http://wald.intevation.org/frs/download.php/1726/openvas-scanner-4.0.3.tar.gz'
+
+# Manager downoad URL.
+node.default['openvas']['manager_url'] = 'http://wald.intevation.org/frs/download.php/1730/openvas-manager-5.0.4.tar.gz'
+
+# GSA ( Greenboon Security Assistant ) download URL.
+node.default['openvas']['gsa_url'] = 'http://wald.intevation.org/frs/download.php/1734/greenbone-security-assistant-5.0.3.tar.gz'
+
+# CLI ( Command Line Interface to install ) download URL.
+node.default['openvas']['gsa_url'] = 'http://wald.intevation.org/frs/download.php/1633/openvas-cli-1.3.0.tar.gz'
+
+
