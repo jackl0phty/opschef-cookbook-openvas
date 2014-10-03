@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'berkshelf'
 gem 'chefspec'
 gem 'rake'
+gem 'ffi', '~> 1.9.5'
 
 group :integration do
   gem 'test-kitchen', '~> 1.2'
